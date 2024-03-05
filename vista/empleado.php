@@ -20,7 +20,7 @@
 <!-- inicio del contenido principal -->
 <div class="page-content">
 
-    <h4 class="text-center text-secondary">LISTA DE EMPLEADOS</h4>
+    <h4 class="text-center text-secondary">LISTA DE ASISTENTES</h4>
 
     <?php
       include "../modelo/conexion.php";
@@ -34,6 +34,8 @@
       empleado.apellido,
       empleado.dni,
       empleado.cargo,
+      empleado.correo,
+      empleado.celular,
       cargo.nombre as 'nom_cargo'
       FROM
       empleado
@@ -52,7 +54,9 @@
           <th scope="col">NOMBRE</th>          
           <th scope="col">APELLIDO</th>
           <th scope="col">DNI</th>
-          <th scope="col">CARGO</th>          
+          <th scope="col">CARGO</th>
+          <th scope="col">CORREO ELECTRÓNICO</th>
+          <th scope="col">CELULAR</th>            
           <th></th>
           
         </tr>
@@ -65,7 +69,10 @@
             <td><?= $datos->nombre ?></td>            
             <td><?= $datos->apellido ?></td>
             <td><?= $datos->dni ?></td>
-            <td><?= $datos->nom_cargo ?></td>            
+            <td><?= $datos->nom_cargo ?></td>
+            <td><?= $datos->correo?></td>
+            <td><?= $datos->celular?></td>
+
             <td>
             <a href="" data-toggle="modal" data-target="#exampleModal<?= $datos->id_empleado ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>  
             <a href="empleado.php?id=<?= $datos->id_empleado ?>" onclick="advertencia(event)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
@@ -105,6 +112,12 @@
                         <?php }
                       ?>
                     </select>
+                  </div>
+                  <div class="fl-flex-label mb-4 px-2 col-12">
+                    <input type="text" placeholder="correo" class="input input__text" name="txtcorreo" value="<?= $datos->correo ?>">
+                  </div>
+                  <div class="fl-flex-label mb-4 px-2 col-12">
+                    <input type="text" placeholder="celular" class="input input__text" name="txtcelular" value="<?= $datos->celular ?>">
                   </div>
                   <div class="text-right p-2">
                     <a href="empleado.php" class="btn btn-secondary btn-rounded">Atras</a>

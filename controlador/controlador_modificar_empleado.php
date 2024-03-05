@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST["btnmodificar"])) {
-    if (!empty($_POST["txtnombre"]) and !empty($_POST["txtapellido"]) and !empty($_POST["txtcargo"]) and !empty($_POST["txtid"])) {        
+    if (!empty($_POST["txtnombre"]) and !empty($_POST["txtapellido"]) and !empty($_POST["txtcargo"]) and !empty($_POST["txtid"])and !empty($_POST["txtcorreo"])and !empty($_POST["txtcelular"])) {        
         $nombre = $_POST["txtnombre"];
         $apellido = $_POST["txtapellido"];        
         $cargo = $_POST["txtcargo"];

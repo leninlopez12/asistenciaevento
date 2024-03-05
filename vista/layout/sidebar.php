@@ -21,7 +21,7 @@
                     <a href="empleado.php" class="activo">
                         <img src="../public/img-inicio/team.png" class="img-inicio" alt="">
                         <!-- <i class="fas fa-house-user"></i> -->
-                        <span class="lbl">USUARIOS</span>
+                        <span class="lbl">ASISTENTES</span>
                     </a>
                 </li>
                 
