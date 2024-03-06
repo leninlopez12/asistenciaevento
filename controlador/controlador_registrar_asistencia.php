@@ -64,7 +64,7 @@ if (!empty($_POST["btnentrada"])) {
                     new PNotify({
                         title:"INCORRECTO",
                         type:"error",
-                        text:"El DNI ingreaso no existe",
+                        text:"El DNI ingresado no existe",
                         styling:"bootstrap3"
                     })
                 })
