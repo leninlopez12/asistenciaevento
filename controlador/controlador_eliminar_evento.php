@@ -1,18 +1,17 @@
 <?php
-
 if (!empty($_GET["id"])) {
-    $id=$_GET["id"];
-    $sql=$conexion->query(" delete from evento where id_evento=$id ");
+    $id = $_GET["id"];
+    $sql = $conexion->query(" DELETE FROM evento WHERE id_evento=$id ");
     if ($sql==true) { ?>
           <script>
                 $(function notificacion(){
                     new PNotify({
                         title:"CORRECTO",
                         type:"success",
-                        text:"Cargo eliminado correctamente",
+                        text:"Evento eliminado correctamente",
                         styling:"bootstrap3"
-                    })
-                })
+                    });
+                });
             </script>
     <?php } else { ?>
             <script>
@@ -20,10 +19,10 @@ if (!empty($_GET["id"])) {
                     new PNotify({
                         title:"INCORRECTO",
                         type:"error",
-                        text:"Error al eliminar cargo",
+                        text:"Error al eliminar Evento",
                         styling:"bootstrap3"
-                    })
-                })
+                    });
+                });
             </script>
     <?php } ?>
         <script>

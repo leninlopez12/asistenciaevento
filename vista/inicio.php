@@ -1,9 +1,8 @@
 <?php
-  session_start();
-    if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
-          header('location:login/login.php');
-    }
-
+session_start();
+if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
+    header('location:login/login.php');
+}
 ?>
 
 <style>
@@ -60,7 +59,6 @@
           <th scope="col">ENTRADA</th>
           <th scope="col">SALIDA</th>
           <th></th>
-          
         </tr>
       </thead>
       <tbody>
@@ -78,9 +76,7 @@
             </td>         
           </tr>
         <?php  }
-        ?>
-     
-       
+        ?> 
       </tbody>
     </table>
 

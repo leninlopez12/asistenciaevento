@@ -52,12 +52,6 @@ if (!empty($_POST["btnentrada"])) {
                     </script>
                 <?php }
             }
-            
-
-           
-            
-
-            
         } else { ?>
             <script>
                 $(function notificacion(){
@@ -70,7 +64,6 @@ if (!empty($_POST["btnentrada"])) {
                 })
             </script>
        <?php }
-            
     } else { ?>
         <script>
                 $(function notificacion(){
@@ -92,8 +85,6 @@ if (!empty($_POST["btnentrada"])) {
 
 ?>
 
-<!-- Registro de Salida  -->
-
 <?php
 
 if (!empty($_POST["btnsalida"])) {
@@ -107,7 +98,6 @@ if (!empty($_POST["btnsalida"])) {
             $id_empleado=$id->fetch_object()->id_empleado;
             $busqueda=$conexion->query(" select id_asistencia,entrada from asistencia where id_empleado=$id_empleado order by id_asistencia desc limit 1 ");
             
-
             while ($datos=$busqueda->fetch_object()) {
                 $id_asistencia=$datos->id_asistencia;
                 $entradaBD=$datos->entrada;
@@ -170,12 +160,6 @@ if (!empty($_POST["btnsalida"])) {
                     <?php }
                 }
             }
-            
-
-          
-                       
-
-            
         } else { ?>
             <script>
                 $(function notificacion(){
