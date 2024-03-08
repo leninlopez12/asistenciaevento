@@ -1,18 +1,24 @@
 <?php
-
 if (!empty($_POST["btnentrada"])) {
     if (!empty($_POST["txtdni"])) { 
         $dni=$_POST["txtdni"];
-        $consulta=$conexion->query(" select count(*) as 'total' from empleado where dni='$dni' ");
-        $id=$conexion->query(" select id_empleado from empleado where dni='$dni' ");
-        if ($consulta->fetch_object()->total > 0) {
+        
+        // Obtener el ID del evento asociado al empleado
+        $id_evento_query = $conexion->query("SELECT id_evento FROM empleado WHERE dni='$dni'");
+        $id_evento_row = $id_evento_query->fetch_assoc();
+        $id_evento = $id_evento_row['id_evento'];
 
+        // Verificar si el empleado existe
+        $consulta=$conexion->query("SELECT COUNT(*) AS 'total' FROM empleado WHERE dni='$dni'");
+        $id=$conexion->query("SELECT id_empleado FROM empleado WHERE dni='$dni'");
+        
+        if ($consulta->fetch_object()->total > 0) {
             $fecha=date("Y-m-d h:i:s");
             $id_empleado=$id->fetch_object()->id_empleado;
 
-            $consultaFecha=$conexion->query(" select entrada from asistencia where id_empleado=$id_empleado order by id_asistencia desc limit 1 ");
+            $consultaFecha=$conexion->query("SELECT entrada FROM asistencia WHERE id_empleado=$id_empleado ORDER BY id_asistencia DESC LIMIT 1");
             $fechaBD=$consultaFecha->fetch_object()->entrada;
-              
+
             if (substr($fecha,0,10)==substr($fechaBD,0,10)) {
                 ?>
                     <script>
@@ -27,7 +33,7 @@ if (!empty($_POST["btnentrada"])) {
                     </script>
                 <?php
             } else {
-                $sql=$conexion->query(" insert into asistencia(id_empleado,entrada)values($id_empleado,'$fecha') ");
+                $sql=$conexion->query("INSERT INTO asistencia(id_empleado, id_evento, entrada) VALUES ($id_empleado, $id_evento, '$fecha')");
                 if ($sql == true) { ?>
                     <script>
                         $(function notificacion(){
@@ -63,40 +69,47 @@ if (!empty($_POST["btnentrada"])) {
                     })
                 })
             </script>
-       <?php }
+        <?php }
     } else { ?>
         <script>
-                $(function notificacion(){
-                    new PNotify({
-                        title:"INCORRECTO",
-                        type:"error",
-                        text:"Ingrese el DNI",
-                        styling:"bootstrap3"
-                    })
+            $(function notificacion(){
+                new PNotify({
+                    title:"INCORRECTO",
+                    type:"error",
+                    text:"Ingrese el DNI",
+                    styling:"bootstrap3"
                 })
-            </script>
-    <?php } ?>
-        <script>
-            setTimeout(() => {
-                window.history.replaceState(null,null,window.location.pathname);
-            }, 0);
+            })
         </script>
+    <?php } ?>
+    <script>
+        setTimeout(() => {
+            window.history.replaceState(null,null,window.location.pathname);
+        }, 0);
+    </script>
 <?php }
 
 ?>
 
 <?php
-
 if (!empty($_POST["btnsalida"])) {
     if (!empty($_POST["txtdni"])) { 
         $dni=$_POST["txtdni"];
-        $consulta=$conexion->query(" select count(*) as 'total' from empleado where dni='$dni' ");
-        $id=$conexion->query(" select id_empleado from empleado where dni='$dni' ");
-        if ($consulta->fetch_object()->total > 0) {
+        
+        // Obtener el ID del evento asociado al empleado
+        $id_evento_query = $conexion->query("SELECT id_evento FROM empleado WHERE dni='$dni'");
+        $id_evento_row = $id_evento_query->fetch_assoc();
+        $id_evento = $id_evento_row['id_evento'];
 
+        // Verificar si el empleado existe
+        $consulta=$conexion->query("SELECT COUNT(*) AS 'total' FROM empleado WHERE dni='$dni'");
+        $id=$conexion->query("SELECT id_empleado FROM empleado WHERE dni='$dni'");
+        
+        if ($consulta->fetch_object()->total > 0) {
             $fecha=date("Y-m-d h:i:s");
             $id_empleado=$id->fetch_object()->id_empleado;
-            $busqueda=$conexion->query(" select id_asistencia,entrada from asistencia where id_empleado=$id_empleado order by id_asistencia desc limit 1 ");
+            
+            $busqueda=$conexion->query("SELECT id_asistencia, entrada FROM asistencia WHERE id_empleado=$id_empleado ORDER BY id_asistencia DESC LIMIT 1");
             
             while ($datos=$busqueda->fetch_object()) {
                 $id_asistencia=$datos->id_asistencia;
@@ -117,7 +130,7 @@ if (!empty($_POST["btnsalida"])) {
                      </script>
                 <?php
             } else {
-                $consultaFecha=$conexion->query(" select salida from asistencia where id_empleado=$id_empleado order by id_asistencia desc limit 1 ");
+                $consultaFecha=$conexion->query("SELECT salida FROM asistencia WHERE id_empleado=$id_empleado ORDER BY id_asistencia DESC LIMIT 1");
                 $fechaBD=$consultaFecha->fetch_object()->salida;
     
                 if (substr($fecha,0,10)==substr($fechaBD,0,10)) {
@@ -134,7 +147,7 @@ if (!empty($_POST["btnsalida"])) {
                         </script>
                     <?php
                 } else {
-                    $sql=$conexion->query(" update asistencia set salida='$fecha' where id_asistencia=$id_asistencia ");
+                    $sql=$conexion->query("UPDATE asistencia SET salida='$fecha' WHERE id_asistencia=$id_asistencia");
                     if ($sql == true) { ?>
                         <script>
                             $(function notificacion(){
@@ -171,25 +184,22 @@ if (!empty($_POST["btnsalida"])) {
                     })
                 })
             </script>
-       <?php }
-            
+        <?php }
     } else { ?>
         <script>
-                $(function notificacion(){
-                    new PNotify({
-                        title:"INCORRECTO",
-                        type:"error",
-                        text:"Ingrese el DNI",
-                        styling:"bootstrap3"
-                    })
+            $(function notificacion(){
+                new PNotify({
+                    title:"INCORRECTO",
+                    type:"error",
+                    text:"Ingrese el DNI",
+                    styling:"bootstrap3"
                 })
-            </script>
-    <?php } ?>
-        <script>
-            setTimeout(() => {
-                window.history.replaceState(null,null,window.location.pathname);
-            }, 0);
+            })
         </script>
-<?php }
-
-?>
+    <?php } ?>
+    <script>
+        setTimeout(() => {
+            window.history.replaceState(null,null,window.location.pathname);
+        }, 0);
+    </script>
+<?php } ?>

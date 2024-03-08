@@ -11,7 +11,7 @@
  Target Server Version : 80300 (8.3.0)
  File Encoding         : 65001
 
- Date: 05/03/2024 17:01:45
+ Date: 08/03/2024 17:07:53
 */
 
 SET NAMES utf8mb4;
@@ -30,16 +30,13 @@ CREATE TABLE `asistencia`  (
   PRIMARY KEY (`id_asistencia`) USING BTREE,
   INDEX `fk2`(`id_empleado` ASC) USING BTREE,
   CONSTRAINT `fk2` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of asistencia
 -- ----------------------------
-INSERT INTO `asistencia` VALUES (13, 1, '2022-03-31 00:17:34', '2022-03-31 00:17:41', NULL);
-INSERT INTO `asistencia` VALUES (14, 6, '2022-03-31 00:22:53', '2022-03-31 00:23:04', NULL);
-INSERT INTO `asistencia` VALUES (21, 11, '2022-03-31 10:36:58', '2022-03-31 10:37:37', NULL);
-INSERT INTO `asistencia` VALUES (22, 6, '2022-08-06 20:59:07', NULL, NULL);
-INSERT INTO `asistencia` VALUES (23, 1, '2024-03-05 03:31:25', '2024-03-05 03:31:27', NULL);
+INSERT INTO `asistencia` VALUES (1, 22, '2024-03-08 04:20:36', '2024-03-08 04:20:38', 1);
+INSERT INTO `asistencia` VALUES (39, 23, '2024-03-08 04:43:18', '2024-03-08 04:43:20', 7);
 
 -- ----------------------------
 -- Table structure for cargo
@@ -49,16 +46,13 @@ CREATE TABLE `cargo`  (
   `id_cargo` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_cargo`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cargo
 -- ----------------------------
-INSERT INTO `cargo` VALUES (1, 'cirujano');
-INSERT INTO `cargo` VALUES (2, 'odontologo');
-INSERT INTO `cargo` VALUES (3, 'farmacia');
-INSERT INTO `cargo` VALUES (4, 'limpieza');
-INSERT INTO `cargo` VALUES (5, 'enfermera');
+INSERT INTO `cargo` VALUES (13, 'Doctor');
+INSERT INTO `cargo` VALUES (14, 'POSTDOCTORADO');
 
 -- ----------------------------
 -- Table structure for empleado
@@ -76,17 +70,13 @@ CREATE TABLE `empleado`  (
   PRIMARY KEY (`id_empleado`) USING BTREE,
   INDEX `fk1`(`cargo` ASC) USING BTREE,
   CONSTRAINT `fk1` FOREIGN KEY (`cargo`) REFERENCES `cargo` (`id_cargo`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of empleado
 -- ----------------------------
-INSERT INTO `empleado` VALUES (1, 'juan manuel', 'quispe chocce', '78945612', 1, NULL, 'juean@gmail.com', '952808082');
-INSERT INTO `empleado` VALUES (2, 'josep', 'vega chavez', '77441122', 2, NULL, 'josep@gmail.com', '951232324');
-INSERT INTO `empleado` VALUES (3, 'erick', 'muleta paredes', '77885522', 3, NULL, '1@gmail.com', '951454184');
-INSERT INTO `empleado` VALUES (4, 'maria', 'molina gutierrez', '00225566', 5, NULL, '2@gmail.com', '945145154');
-INSERT INTO `empleado` VALUES (6, 'ismael', 'sandoval', '74433542', 4, NULL, 'isam@gmail.com', '941545154');
-INSERT INTO `empleado` VALUES (11, 'prueba', 'prueba', '00225588', 1, NULL, 'prueba@gmail.com', '911111111');
+INSERT INTO `empleado` VALUES (22, 'Lenin', 'lopez yucra', '75896898', 13, 7, 'lenintlv766@gmail.com', '952808082 ');
+INSERT INTO `empleado` VALUES (23, 'Andres', 'LUQUE LUQE', '12345678', 13, 7, 'elia@gmail.com', '987456321');
 
 -- ----------------------------
 -- Table structure for empresa
@@ -104,7 +94,7 @@ CREATE TABLE `empresa`  (
 -- ----------------------------
 -- Records of empresa
 -- ----------------------------
-INSERT INTO `empresa` VALUES (1, 'Informatica Studios', '925310896', 'av. los incas', '78945612378');
+INSERT INTO `empresa` VALUES (1, 'INUDI SAC', '925310896 ', 'URB LOS JARDINES', '78945612378 ');
 
 -- ----------------------------
 -- Table structure for evento
@@ -116,12 +106,15 @@ CREATE TABLE `evento`  (
   `fecha` date NOT NULL,
   `tipo_evento` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_evento`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of evento
 -- ----------------------------
-INSERT INTO `evento` VALUES (1, 'X CONGRESO INTERNACIONAL', '2024-03-05', 'CONGRESO');
+INSERT INTO `evento` VALUES (1, 'X CONGRESO INTERNACIONAL', '2024-03-07', 'CONGRESO internaciona2');
+INSERT INTO `evento` VALUES (6, 'TALLER DE INNOVACIÓN ', '2024-03-06', 'TALLER');
+INSERT INTO `evento` VALUES (7, 'TALLER DE CIENCIA', '2024-03-07', 'TALLER 2');
+INSERT INTO `evento` VALUES (8, 'LENIN', '2024-03-08', 'LENIN');
 
 -- ----------------------------
 -- Table structure for usuario
@@ -135,12 +128,12 @@ CREATE TABLE `usuario`  (
   `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `id_evento` int NULL DEFAULT NULL,
   PRIMARY KEY (`id_usuario`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of usuario
 -- ----------------------------
-INSERT INTO `usuario` VALUES (1, 'ismaelito', 'sandoval', 'isai', '202cb962ac59075b964b07152d234b70', NULL);
 INSERT INTO `usuario` VALUES (2, 'juan', 'mamani', 'juan', '202cb962ac59075b964b07152d234b70', NULL);
+INSERT INTO `usuario` VALUES (6, 'lenin', 'lopez yucra', 'lenin', '202cb962ac59075b964b07152d234b70', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -20,7 +20,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
 <!-- inicio del contenido principal -->
 <div class="page-content">
 
-    <h4 class="text-center text-secondary">REGISTRO DE EMPLEADOS</h4>
+    <h4 class="text-center text-secondary">REGISTRO DE ASISTENTES</h4>
 
     <?php
     include "../modelo/conexion.php";
@@ -37,6 +37,12 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
             </div>
             <div class="fl-flex-label mb-4 px-2 col-md-6">
                 <input type="text" placeholder="Dni" class="input input__text" name="txtdni">
+            </div>
+            <div class="fl-flex-label mb-4 px-2 col-md-6">
+                <input type="text" placeholder="Correo" class="input input__text" name="txtcorreo">
+            </div>
+            <div class="fl-flex-label mb-4 px-2 col-md-6">
+                <input type="text" placeholder="Celular" class="input input__text" name="txtcelular">
             </div>
             <div class="fl-flex-label mb-4 px-2 col-md-6">
                 <select name="txtcargo" class="input input__select">

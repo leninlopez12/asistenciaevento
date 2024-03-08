@@ -1,10 +1,12 @@
 <?php
 
 if (!empty($_POST["btnregistrar"])) {
-    if (!empty($_POST["txtnombre"]) and !empty($_POST["txtapellido"]) and !empty($_POST["txtdni"]) and !empty($_POST["txtcargo"]) and !empty($_POST["txtevento"])) {
+    if (!empty($_POST["txtnombre"]) and !empty($_POST["txtapellido"]) and !empty($_POST["txtdni"]) and !empty($_POST["txtcorreo"]) and !empty($_POST["txtcelular"])and !empty($_POST["txtcargo"]) and !empty($_POST["txtevento"])) {
         $nombre = $_POST["txtnombre"];
         $apellido = $_POST["txtapellido"];
         $dni = $_POST["txtdni"];
+        $correo = $_POST["txtcorreo"];
+        $celular = $_POST["txtcelular"]; 
         $cargo = $_POST["txtcargo"];
         $evento = $_POST["txtevento"];
 
@@ -21,7 +23,7 @@ if (!empty($_POST["btnregistrar"])) {
                 })
             </script>
         <?php } else {
-            $registro = $conexion->query("INSERT INTO empleado(nombre, apellido, dni, cargo, id_evento) VALUES ('$nombre','$apellido','$dni',$cargo,$evento)");
+            $registro = $conexion->query("INSERT INTO empleado(nombre, apellido, dni, correo, celular, cargo, id_evento) VALUES ('$nombre','$apellido','$dni','$correo','$celular',$cargo,$evento)");
 
             if ($registro == true) { ?>
                 <script>

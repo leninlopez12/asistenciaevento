@@ -1,13 +1,10 @@
-<?php
-error_reporting(0);
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Bienvenida</title>
+    <title>Asistencia INUDIPeru</title>
     <link rel="stylesheet" href="./public/estilos/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,61 +22,101 @@ error_reporting(0);
     <script src="public/pnotify/js/pnotify.js"></script>
     <script src="public/pnotify/js/pnotify.buttons.js"></script>
 
+    <style>
+
+        .container-left {
+            flex: 2;
+            padding: 10px;
+        }
+
+        .container-right {
+            flex: 2;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <?php
+    error_reporting(0);
     date_default_timezone_set("America/Lima");
     ?>
-    <h1>BIENVENIDOS A INUDI, REGISTRA TU ASISTENCIA</h1>
-    <div style="text-align: center;">
-        <img src="vista/login/img/logoinudi.png" style="border: none;">
+    <div class="container-left">
+        <div style="text-align:center"class="container-left">
+        <h1 class="H1" style="text-align: center; font-size: 36px; margin-top: 10px; margin-bottom:20px;">II CONGRESO INTERNACIONAL DE REVISION ADICIONAL MENDELEY</h1>
+            <a href="https://inudi.edu.pe/programas/ia/">
+                <img src="vista/login/img/indexlogo.png" style="width: 60%; height: auto; border: none; display: block; margin: 0 auto; margin-bottom: 40px;" alt="II CONGRESO INTERNACIONAL DE REVISION ADICIONAL MENDELEY">
+            </a>
+
+        <p style="text-align: center; font-size: 18px; margin-bottom: 10px;">congreso internacional en logica avanzada como la transparencia de realziar articulo profesional e incluir</p>
+        
     </div>
-    <h2 id="fecha"><?= date("d/m/Y, h:i:s") ?></h2>
-    <?php
-    include "modelo/conexion.php";
-    include "controlador/controlador_registrar_asistencia.php";
-    ?>
-    <div class="container">
-        <a class="acceso" href="./vista/login/login.php">Login</a>
-        <p class="dni">Ingrese su DNI</p>
-        <form action="" method="POST">
-            <input type="number" placeholder="DNI del Empleado" name="txtdni" id="txtdni">
-            <div class="botones">
-                <button id="entrada" class="entrada" type="submit" name="btnentrada" value="ok">ENTRADA</button>
-                <button id="salida" class="salida" type="submit" name="btnsalida" value="ok">SALIDA</button>
+
+    </div>
+
+    <div class="container-right">
+            <div class="institute-name">
+                <span class="line-1">Instituto Universitario de Innovación</a></span>
+                <span class="line-2">Ciencia y Tecnología Inudi Perú</a></span>
+
             </div>
-        </form>
-    </div>
+        
+        <div style="text-align: center;">
+                <a href="https://inudi.edu.pe/">
+                    <img src="vista/login/img/logoinudi.png" style="border: none;">
+                </a>
 
-    <script>
-        setInterval(() => {
-            let fecha=new Date();
-            let fechaHora=fecha.toLocaleString();
-            document.getElementById("fecha").textContent=fechaHora;    
-        }, 1000);
-    </script>
+        </div>
+        <h1> REGISTRA TU ASISTENCIA</h1>
+        <h2  id="fecha"><?= date("d/m/Y, h:i:s") ?></h2>
+        <?php
+        include "modelo/conexion.php";
+        include "controlador/controlador_registrar_asistencia.php";
+        ?>
+        <div class="container">
+            <!--<a class="acceso" href="./vista/login/login.php">Login</a>-->
+            <p class="dni">Ingrese su DNI</p>
+            <form action="" method="POST">
+                <input type="number" placeholder="DNI del Asistente" name="txtdni" id="txtdni">
+                <div class="botones">
+                    <button id="entrada" class="entrada" type="submit" name="btnentrada" value="ok">ENTRADA</button>
+                    <button id="salida" class="salida" type="submit" name="btnsalida" value="ok">SALIDA</button>
+                </div>
+            </form>
+        </div>
 
-    <script>
-        let dni=document.getElementById("txtdni");
-        dni.addEventListener("input", function () {
-            if (this.value.length > 8) {
-                this.value=this.value.slice(0,8)
-            }
-        })
+        <script>
+            setInterval(() => {
+                let fecha=new Date();
+                let fechaHora=fecha.toLocaleString();
+                document.getElementById("fecha").textContent=fechaHora;    
+            }, 1000);
+        </script>
 
-        // Eventos para la entrada y salida 
-        document.addEventListener("keyup",function (event) {
-            if (event.code=="ArrowLeft") {
-                document.getElementById("salida").click()
-            } else {
-                if (event.code=="ArrowRight") {
-                    document.getElementById("entrada").click()
+        <script>
+            let dni=document.getElementById("txtdni");
+            dni.addEventListener("input", function () {
+                if (this.value.length > 8) {
+                    this.value=this.value.slice(0,8)
                 }
-            }
-        })
+            })
 
-    </script>
-
+            // Eventos para la entrada y salida 
+            document.addEventListener("keyup",function (event) {
+                if (event.code=="ArrowLeft") {
+                    document.getElementById("salida").click()
+                } else {
+                    if (event.code=="ArrowRight") {
+                        document.getElementById("entrada").click()
+                    }
+                }
+            })
+        </script>
+    </div>
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Instituto Universitario de Innovación, Ciencia y Tecnología Inudi Perú</p>
+    </footer>
+    
 </body>
+
 
 </html>

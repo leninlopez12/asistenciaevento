@@ -41,6 +41,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
       INNER JOIN empleado ON asistencia.id_empleado = empleado.id_empleado
       INNER JOIN cargo ON empleado.cargo = cargo.id_cargo");
     ?>
+    
 
     <div class="text-right mb-2">
       <a href="fpdf/reporteasistenciaH.php" target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i> Generar Reportes</a>

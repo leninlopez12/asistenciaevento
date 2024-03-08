@@ -1,99 +1,168 @@
+/* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;  
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;  
+}
+
+body {
+  display: flex;
+  background-image: linear-gradient(to right, rgb(8, 64, 216) 0%, rgba(0,0,0,0) 100%), url('../img-inicio/logobody2.png');
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+  background-position: center; 
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+  min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% de la altura de la ventana */
+}
+
+
+.container {
+  width: 400px;  
+  margin: 2rem auto;
+  padding: 2rem;
+
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px #aaa; 
+
+  background: #fff;
+  text-align: left; 
+}
+
+.dni {
+  text-align: center;  
+  font-size: 30px; 
+  margin-bottom: 20px;
+}
+
+.acceso {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
   
-  body {
-    background: #f2f2f2;
-  }
+  background-color: #5586D6;
+  color: #fff;
   
+  text-decoration: none;
+  border-radius: 4px;
+  
+  font-weight: bold; 
+  transition: background .3s ease;
+}
+
+.acceso:hover {
+  background-color: #3b67b0;
+}
+.H1{
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  max-width: 960px;
+  margin-bottom: 1rem;  
+}
+
+img {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;  
+  width: 100%;
+  margin-bottom: 1rem;
+} 
+
+.botones {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.entrada, .salida {
+  padding: 12px 16px;  
+  width: 48%;
+  border: none;
+  outline: none; 
+  border-radius: 4px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;  
+}
+
+.entrada {
+  background: #10a857;
+  color: #fff;
+}
+
+.salida {
+  background: #ff0000;
+  color: #fff;  
+}
+
+#fecha {
+  text-align: center;
+  margin-top: 1rem;
+  color: #a3a1a1;
+}
+
+.institute-name {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.line-1 {
+  color: #020303;
+  letter-spacing: -0.04em;
+}
+
+.line-2 {
+  color: #26a65b;
+  letter-spacing: -0.02em;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
   .container {
-    width: 400px;  
-    margin: 2rem auto;
-    padding: 2rem;
-  
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px #aaa; 
-  
-    background: #fff;
-    text-align: left; 
-  }
-  .dni {
-    text-align: center;  
-    font-size: 25px; 
-    margin-bottom: 20px;
-  }
-  .acceso {
-    display: inline-block;
-    padding: 0.8rem 1.2rem;
-    
-    background-color: #5586D6;
-    color: #fff;
-    
-    text-decoration: none;
-    border-radius: 4px;
-    
-    font-weight: bold; 
-    transition: background .3s ease;
-  }
-  
-  .acceso:hover {
-    background-color: #3b67b0;
-  }
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-    max-width: 960px;
-    margin-bottom: 1rem;  
+      width: 90%; /* Ajusta el ancho del contenedor para adaptarse a pantallas más pequeñas */
+      max-width: 500px; /* Limita el ancho máximo del contenedor */
   }
   
   img {
-    width: 120px;
-    margin-bottom: 1rem;
+      width: 100%; /* Hace que la imagen sea responsive, ocupando el 100% del ancho del contenedor */
   }
-  
-  input {
-    padding: 12px 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;  
-    width: 100%;
-    margin-bottom: 1rem;
-  } 
-  
-  .botones {
-    display: flex;
-    justify-content: space-between; 
+
+  h1 {
+      font-size: 24px; /* Reduce el tamaño del título en pantallas más pequeñas */
   }
-  
-  .entrada, .salida {
-    padding: 12px 16px;  
-    width: 48%;
-    border: none;
-    outline: none; 
-    border-radius: 4px;
-  
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;  
+
+  .institute-name {
+      font-size: 1.5rem; /* Reduce el tamaño del nombre del instituto en pantallas más pequeñas */
   }
-  
-  .entrada {
-    background: #10a857;
-    color: #fff;
-  }
-  
-  .salida {
-    background: #ff0000;
-    color: #fff;  
-  }
-  
-  #fecha {
-    text-align: center;
-    margin-top: 1rem;
-    color: #777;
-  }
+}
+
+footer {
+  background-color: #2e61ce; /* Color de fondo del pie de página */
+  color: #fff; /* Color del texto */
+  text-align: center; /* Alineación del texto al centro */
+  padding: 20px 0; /* Espaciado interno */
+  position: fixed; /* Fijar el pie de página en la parte inferior */
+  width: 100%; /* Ancho completo */
+  bottom: 0; /* Alinear el pie de página en la parte inferior */
+}
+
+footer p {
+  margin: 0; /* Eliminar el margen por defecto del párrafo */
+}
