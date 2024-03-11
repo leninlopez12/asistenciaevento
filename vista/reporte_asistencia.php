@@ -31,7 +31,7 @@
       <input required type="date" name="txtfechainicio" class="input input__text mb-2">
       <input required type="date" name="txtfechafinal" class="input input__text mb-2">
       <select required name="txtempleado" class="input input__select mb-2">
-        <option value="todos">Todos los empleados</option>
+        <option value="todos">Todos los asistentes</option>
         <?php
           while ($datos=$sql->fetch_object()) { ?>
             <option value="<?= $datos->id_empleado ?>"><?= $datos->nombre ." ". $datos->apellido ?></option>
@@ -47,6 +47,10 @@
 </div>
 <!-- fin del contenido principal -->
 
-
+    <script>
+        setTimeout(() => {
+            window.history.replaceState(null,null,window.location.pathname);
+        }, 0);
+    </script>
 <!-- por ultimo se carga el footer -->
 <?php require('./layout/footer.php'); ?>

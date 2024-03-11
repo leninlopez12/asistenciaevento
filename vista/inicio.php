@@ -35,7 +35,8 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
       empleado.dni,
       empleado.cargo,
       cargo.id_cargo,
-      cargo.nombre as 'nom_cargo'
+      cargo.nombre as 'nom_cargo',
+      asistencia.id_evento
       FROM
       asistencia
       INNER JOIN empleado ON asistencia.id_empleado = empleado.id_empleado
@@ -54,11 +55,13 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">EMPLEADO</th>
-          <th scope="col">DNI</th>
+          <!--<th scope="col">ID_Evento</th>-->
+          <th scope="col">ASISTENTES</th>
+          <th scope="col">CÓDIGO/NÚMERO DE IDENTIDAD</th>
           <th scope="col">CARGO</th>
           <th scope="col">ENTRADA</th>
           <th scope="col">SALIDA</th>
+          <th scope="col">HORAS</th>
           <th></th>
         </tr>
       </thead>
@@ -71,7 +74,25 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
             <td><?= $datos->dni?></td> 
             <td><?= $datos->nom_cargo ?></td>
             <td><?= $datos->entrada ?></th>
-            <td><?= $datos->salida ?></td>   
+            <td><?= $datos->salida ?></td>
+            <?php
+                  // Suponiendo que $datos->entrada y $datos->salida son marcas de tiempo en formato HH:MM:SS
+
+                  // Convertir las marcas de tiempo en objetos DateTime
+                  $hora_entrada = new DateTime($datos->entrada);
+                  $hora_salida = new DateTime($datos->salida);
+
+                  // Calcular la diferencia entre las dos marcas de tiempo
+                  $diferencia = $hora_entrada->diff($hora_salida);
+
+                  // Formatear la diferencia en horas, minutos y segundos
+                  $tiempo_transcurrido = $diferencia->format('%H:%I:%S');
+
+                  // Mostrar el resultado
+                  
+                  ?>
+
+            <td><?=$tiempo_transcurrido?></td>   
             <td>
             <a href="inicio.php?id=<?= $datos->id_asistencia ?>" onclick="advertencia(event)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
             </td>         

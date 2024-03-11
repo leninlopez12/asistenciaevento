@@ -78,7 +78,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                     <th scope="col">ID</th>
                     <th scope="col">NOMBRE</th>
                     <th scope="col">APELLIDO</th>
-                    <th scope="col">DNI</th>
+                    <th scope="col">CÓDIGO/NÚMERO DE IDENTIDAD</th>
                     <th scope="col">CARGO</th>
                     <th scope="col">CORREO ELECTRÓNICO</th>
                     <th scope="col">CELULAR</th>

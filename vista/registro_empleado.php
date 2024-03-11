@@ -36,7 +36,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                 <input type="text" placeholder="Apellido" class="input input__text" name="txtapellido">
             </div>
             <div class="fl-flex-label mb-4 px-2 col-md-6">
-                <input type="text" placeholder="Dni" class="input input__text" name="txtdni">
+                <input type="text" placeholder="CÓDIGO/NÚMERO DE IDENTIDAD" class="input input__text" name="txtdni">
             </div>
             <div class="fl-flex-label mb-4 px-2 col-md-6">
                 <input type="text" placeholder="Correo" class="input input__text" name="txtcorreo">

@@ -40,16 +40,19 @@
     error_reporting(0);
     date_default_timezone_set("America/Lima");
     ?>
-    <div class="container-left">
+    <!--<div class="container-left">
         <div style="text-align:center"class="container-left">
-        <h1 class="H1" style="text-align: center; font-size: 36px; margin-top: 10px; margin-bottom:20px;">II CONGRESO INTERNACIONAL DE REVISION ADICIONAL MENDELEY</h1>
-            <a href="https://inudi.edu.pe/programas/ia/">
-                <img src="vista/login/img/indexlogo.png" style="width: 60%; height: auto; border: none; display: block; margin: 0 auto; margin-bottom: 40px;" alt="II CONGRESO INTERNACIONAL DE REVISION ADICIONAL MENDELEY">
-            </a>
+        <h1 class="H1" style="text-align: center; font-size: 36px; margin-top: 10px; margin-bottom:20px; transition: color 0.3s;">Curso taller internacional de Inteligencia Artificial orientada a la docencia universitaria</h1>
+        <a href="https://inudi.edu.pe/programas/ia/">
+    IMAGEN DE PANTALLA PRINCIPAL
+            <img src="vista/login/img/indexlogo.png" style="width: 60%; height: auto; border: none; display: block; margin: 0 auto; margin-bottom: 40px; transition: transform 0.3s; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 10, 10);" alt="II CONGRESO INTERNACIONAL DE REVISION ADICIONAL MENDELEY" class="movimiento">
+        </a>
 
-        <p style="text-align: center; font-size: 18px; margin-bottom: 10px;">congreso internacional en logica avanzada como la transparencia de realziar articulo profesional e incluir</p>
+
+
+        <p style="text-align: center; font-size: 18px; margin-bottom: 10px ; color: white;">Durante este curso, los participantes adquirirán habilidades fundamentales en el ámbito de la inteligencia artificial aplicada a la docencia universitaria. Algunos de los temas clave que se abordarán son los siguientes:</p>
         
-    </div>
+    </div>-->
 
     </div>
 
@@ -67,14 +70,14 @@
 
         </div>
         <h1> REGISTRA TU ASISTENCIA</h1>
-        <h2  id="fecha"><?= date("d/m/Y, h:i:s") ?></h2>
+        <h2  id="fecha"><?=date("d/m/Y, h:i:s") ?></h2>
         <?php
         include "modelo/conexion.php";
         include "controlador/controlador_registrar_asistencia.php";
         ?>
         <div class="container">
             <!--<a class="acceso" href="./vista/login/login.php">Login</a>-->
-            <p class="dni">Ingrese su DNI</p>
+            <p class="dni">Ingrese su CÓDIGO/NÚMERO DE IDENTIDAD</p>
             <form action="" method="POST">
                 <input type="number" placeholder="DNI del Asistente" name="txtdni" id="txtdni">
                 <div class="botones">
@@ -95,8 +98,8 @@
         <script>
             let dni=document.getElementById("txtdni");
             dni.addEventListener("input", function () {
-                if (this.value.length > 8) {
-                    this.value=this.value.slice(0,8)
+                if (this.value.length > 25) {
+                    this.value=this.value.slice(0,25)
                 }
             })
 

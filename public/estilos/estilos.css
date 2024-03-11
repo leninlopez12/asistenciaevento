@@ -166,3 +166,9 @@ footer {
 footer p {
   margin: 0; /* Eliminar el margen por defecto del párrafo */
 }
+.movimiento:hover {
+  transform: translateY(-5px);
+}
+.H1:hover {
+  color: #26a65b;
+}

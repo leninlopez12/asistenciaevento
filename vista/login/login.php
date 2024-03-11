@@ -18,12 +18,16 @@
     <img class="wave" src="">
     <div class="container">
         <div class="img">
-            <img src="img/logoinudi.png">
+            <<img src="img/logoinudi.png">
         </div>
         <div class="login-content">
             <form method="POST" action="">
-                <img src="img/logoinudi.png">
-                <h2 class="title">BIENVENIDO A INUDI</h2>
+                <!--<img src="img/logoinudi.png">-->
+                <div class="institute-name">
+                    <span class="line-1">Instituto Universitario de Innovación</a></span>
+                    <span class="line-2">Ciencia y Tecnología Inudi Perú</a></span>
+                 </div>
+                
                 <?php
                     include "../../modelo/conexion.php";
                     include "../../controlador/login.php";

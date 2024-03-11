@@ -259,3 +259,20 @@ a:hover{
     
     
 }
+.institute-name {
+	font-family: Arial, sans-serif;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 1.2;
+	text-align: center;
+  }
+  
+  .line-1 {
+	color: #020303;
+	letter-spacing: -0.04em;
+  }
+  
+  .line-2 {
+	color: #26a65b;
+	letter-spacing: -0.02em;
+  }
