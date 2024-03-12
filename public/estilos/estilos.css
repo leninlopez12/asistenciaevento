@@ -154,7 +154,7 @@ input {
 }
 
 footer {
-  background-color: #2e61ce; /* Color de fondo del pie de página */
+  background-color: rgb(8, 64, 216); /* Color de fondo del pie de página */
   color: #fff; /* Color del texto */
   text-align: center; /* Alineación del texto al centro */
   padding: 20px 0; /* Espaciado interno */

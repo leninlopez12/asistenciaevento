@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="vista/login/img/logoinudi.png" rel="shortcut icon">
     <!-- pNotify -->
     <link href="public/pnotify/css/pnotify.css" rel="stylesheet" />
     <link href="public/pnotify/css/pnotify.buttons.css" rel="stylesheet" />
@@ -58,10 +59,27 @@
 
     <div class="container-right">
             <div class="institute-name">
-                <span class="line-1">Instituto Universitario de Innovación</a></span>
-                <span class="line-2">Ciencia y Tecnología Inudi Perú</a></span>
-
+                <span class="line-1" id="line-1">Instituto Universitario de Innovación</a></span>
+                <span class="line-2" id="line-2">Ciencia y Tecnología Inudi Perú</a></span>
             </div>
+            <script>
+    // Obtener los elementos span por su ID
+    var line1 = document.getElementById("line-1");
+    var line2 = document.getElementById("line-2");
+
+    // Agregar evento de clic a line1
+    line1.addEventListener("click", function() {
+        // Redirigir al usuario a la URL deseada
+        window.location.href = "https://inudi.edu.pe/";
+    });
+
+    // Agregar evento de clic a line2
+    line2.addEventListener("click", function() {
+        // Redirigir al usuario a la URL deseada
+        window.location.href = "https://inudi.edu.pe/";
+    });
+</script>
+
         
         <div style="text-align: center;">
                 <a href="https://inudi.edu.pe/">
@@ -70,16 +88,16 @@
 
         </div>
         <h1> REGISTRA TU ASISTENCIA</h1>
-        <h2  id="fecha"><?=date("d/m/Y, h:i:s") ?></h2>
+        <!--<h2  id="fecha">//date("d/m/Y, h:i:s") ?></h2> NO OLVIDARSE DE PONER EL COMIENZO DE PHP--> 
         <?php
         include "modelo/conexion.php";
         include "controlador/controlador_registrar_asistencia.php";
         ?>
         <div class="container">
-            <!--<a class="acceso" href="./vista/login/login.php">Login</a>-->
+            <!--botonex GUIÑO GUIÑO-->
             <p class="dni">Ingrese su CÓDIGO/NÚMERO DE IDENTIDAD</p>
             <form action="" method="POST">
-                <input type="number" placeholder="DNI del Asistente" name="txtdni" id="txtdni">
+                <input type="number" placeholder="Código/Número ID del asistente" name="txtdni" id="txtdni">
                 <div class="botones">
                     <button id="entrada" class="entrada" type="submit" name="btnentrada" value="ok">ENTRADA</button>
                     <button id="salida" class="salida" type="submit" name="btnsalida" value="ok">SALIDA</button>
@@ -123,3 +141,4 @@
 
 
 </html>
+<!--<a class="acceso" href="./vista/login/login.php">Login</a>-->
