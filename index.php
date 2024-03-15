@@ -134,7 +134,7 @@
         </script>
     </div>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Instituto Universitario de Innovación, Ciencia y Tecnología Inudi Perú</p>
+        <p>&copy; <?php echo date("Y"); ?> Instituto Universitario de Innovación Ciencia y Tecnología Inudi Perú</p>
     </footer>
     
 </body>

@@ -20,13 +20,16 @@ if (!empty($_POST["btnentrada"])) {
             $fechaBD=$consultaFecha->fetch_object()->entrada;
 
             if (substr($fecha,0,10)==substr($fechaBD,0,10)) {
+                        $result = $conexion->query("SELECT nombre FROM empleado WHERE id_empleado = $id_empleado");
+                        $row = $result->fetch_assoc();
+                        $nombre_asistente = $row['nombre'];
                 ?>
                     <script>
                         $(function notificacion(){
                             new PNotify({
                                 title:"INCORRECTO",
                                 type:"error",
-                                text:"Ya registraste tu entrada",
+                                text:"<?php echo $nombre_asistente; ?>, Ya registro su entrada",
                                 styling:"bootstrap3"
                             })
                         })
@@ -34,13 +37,17 @@ if (!empty($_POST["btnentrada"])) {
                 <?php
             } else {
                 $sql=$conexion->query("INSERT INTO asistencia(id_empleado, id_evento, entrada) VALUES ($id_empleado, $id_evento, '$fecha')");
-                if ($sql == true) { ?>
+                if ($sql == true) {
+                        $result = $conexion->query("SELECT nombre FROM empleado WHERE id_empleado = $id_empleado");
+                        $row = $result->fetch_assoc();
+                        $nombre_asistente = $row['nombre'];
+                    ?>
                     <script>
                         $(function notificacion(){
                             new PNotify({
-                                title:"CORRECTO",
+                                title:"ASISTENCIA REGISTRADA",
                                 type:"success",
-                                text:"Hola, BIENVENIDO",
+                                text:"Hola,  <?php echo $nombre_asistente; ?>  BIENVENIDO, la asistencia de inicio se ha registrado correctamente",
                                 styling:"bootstrap3"
                             })
                         })
@@ -64,7 +71,7 @@ if (!empty($_POST["btnentrada"])) {
                     new PNotify({
                         title:"INCORRECTO",
                         type:"error",
-                        text:"El DNI ingresado no existe",
+                        text:"El ID/Código/DNI ingresado no existe",
                         styling:"bootstrap3"
                     })
                 })
@@ -76,7 +83,7 @@ if (!empty($_POST["btnentrada"])) {
                 new PNotify({
                     title:"INCORRECTO",
                     type:"error",
-                    text:"Ingrese el DNI",
+                    text:"Ingrese el ID/Código/DNI",
                     styling:"bootstrap3"
                 })
             })
@@ -117,13 +124,16 @@ if (!empty($_POST["btnsalida"])) {
             }
 
             if (substr($fecha,0,10)!=substr($entradaBD,0,10)) {
+                        $result = $conexion->query("SELECT nombre FROM empleado WHERE id_empleado = $id_empleado");
+                        $row = $result->fetch_assoc();
+                        $nombre_asistente = $row['nombre'];
                 ?>
                      <script>
                         $(function notificacion(){
                             new PNotify({
                                 title:"INCORRECTO",
                                 type:"error",
-                                text:"PRIMERO DEBES REGISTRAR ENTRADA",
+                                text:"<?php echo $nombre_asistente; ?>, PRIMERO DEBES REGISTRAR ENTRADA",
                                 styling:"bootstrap3"
                             })
                         })
@@ -134,13 +144,16 @@ if (!empty($_POST["btnsalida"])) {
                 $fechaBD=$consultaFecha->fetch_object()->salida;
     
                 if (substr($fecha,0,10)==substr($fechaBD,0,10)) {
+                        $result = $conexion->query("SELECT nombre FROM empleado WHERE id_empleado = $id_empleado");
+                        $row = $result->fetch_assoc();
+                        $nombre_asistente = $row['nombre'];
                     ?>
                         <script>
                             $(function notificacion(){
                                 new PNotify({
                                     title:"INCORRECTO",
                                     type:"error",
-                                    text:"YA REGISTRASTE TU SALIDA",
+                                    text:"<?php echo $nombre_asistente; ?>, YA REGISTRASTE TU SALIDA",
                                     styling:"bootstrap3"
                                 })
                             })
@@ -148,13 +161,17 @@ if (!empty($_POST["btnsalida"])) {
                     <?php
                 } else {
                     $sql=$conexion->query("UPDATE asistencia SET salida='$fecha' WHERE id_asistencia=$id_asistencia");
-                    if ($sql == true) { ?>
+                    if ($sql == true) { 
+                        $result = $conexion->query("SELECT nombre FROM empleado WHERE id_empleado = $id_empleado");
+                        $row = $result->fetch_assoc();
+                        $nombre_asistente = $row['nombre'];
+                        ?>
                         <script>
                             $(function notificacion(){
                                 new PNotify({
-                                    title:"CORRECTO",
+                                    title:"SALIDA REGISTRADA",
                                     type:"success",
-                                    text:"ADIOS, VUELVE PRONTO",
+                                    text:" <?php echo $nombre_asistente; ?> ¡Hasta luego! Esperamos verte nuevamente en nuestra próxima clase.",
                                     styling:"bootstrap3"
                                 })
                             })
@@ -165,7 +182,7 @@ if (!empty($_POST["btnsalida"])) {
                                 new PNotify({
                                     title:"INCORRECTO",
                                     type:"error",
-                                    text:"Error al registrar SALIDA",
+                                    text:"Error al registrar la SALIDA",
                                     styling:"bootstrap3"
                                 })
                             })
@@ -179,7 +196,7 @@ if (!empty($_POST["btnsalida"])) {
                     new PNotify({
                         title:"INCORRECTO",
                         type:"error",
-                        text:"El DNI ingresado no existe",
+                        text:"El ID/Código/DNI ingresado no existe",
                         styling:"bootstrap3"
                     })
                 })
@@ -191,7 +208,7 @@ if (!empty($_POST["btnsalida"])) {
                 new PNotify({
                     title:"INCORRECTO",
                     type:"error",
-                    text:"Ingrese el DNI",
+                    text:"Ingrese el ID/Código/DNI",
                     styling:"bootstrap3"
                 })
             })
