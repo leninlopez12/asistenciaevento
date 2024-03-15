@@ -42,7 +42,7 @@
           <input type="password" placeholder="Contraseña" class="input input__text" name="txtpassword">
         </div>
         <div class="text-right p-2">
-          <a href="usuario.php" class="btn btn-secondary btn-rounded">Atras</a>
+          <a href="usuario.php" class="btn btn-secondary btn-rounded">Atrás</a>
           <button type="submit" value="ok" name="btnregistrar" class="btn btn-primary btn-rounded">Registrar</button>
         </div>
       </form>

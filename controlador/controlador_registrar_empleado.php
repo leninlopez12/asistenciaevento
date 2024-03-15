@@ -11,7 +11,7 @@ if (!empty($_POST["btnregistrar"])) {
         $evento = $_POST["txtevento"];
 
         $sql = $conexion->query("SELECT count(*) as 'total' FROM empleado WHERE dni='$dni'");
-        if ($sql->fetch_object()->total > 0) { ?>
+        if ($sql->fetch_object()->total > 100) { ?>
             <script>
                 $(function notificacion() {
                     new PNotify({

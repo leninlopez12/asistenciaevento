@@ -20,7 +20,7 @@
 <!-- inicio del contenido principal -->
 <div class="page-content">
 
-    <h4 class="text-center text-secondary">LISTA DE CARGOS</h4>
+    <h4 class="text-center text-secondary">LISTA DE GRADOS</h4>
 
     <?php
       include "../modelo/conexion.php";
@@ -61,7 +61,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title w-100" id="exampleModalLabel">Modificar Cargo</h5>
+                  <h5 class="modal-title w-100" id="exampleModalLabel">Modificar Grado</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -76,7 +76,7 @@
                   </div>                  
                   
                   <div class="text-right p-2">
-                    <a href="cargo.php" class="btn btn-secondary btn-rounded">Atras</a>
+                    <a href="cargo.php" class="btn btn-secondary btn-rounded">Atrás</a>
                     <button type="submit" value="ok" name="btnmodificar" class="btn btn-primary btn-rounded">Modificar</button>
                   </div>                                   
                 </form>

@@ -20,7 +20,7 @@
 <!-- inicio del contenido principal -->
 <div class="page-content">
 
-    <h4 class="text-center text-secondary">REGISTRO DE CARGOS</h4>
+    <h4 class="text-center text-secondary">REGISTRO DE GRADOS</h4>
 
     <?php
       include "../modelo/conexion.php";
@@ -34,7 +34,7 @@
         </div>
         
         <div class="text-right p-2">
-          <a href="cargo.php" class="btn btn-secondary btn-rounded">Atras</a>
+          <a href="cargo.php" class="btn btn-secondary btn-rounded">Atrás</a>
           <button type="submit" value="ok" name="btnregistrar" class="btn btn-primary btn-rounded">Registrar</button>
         </div>
       </form>

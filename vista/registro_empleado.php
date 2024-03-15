@@ -68,7 +68,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                 </select>
             </div>
             <div class="text-right p-2">
-                <a href="empleado.php" class="btn btn-secondary btn-rounded">Atras</a>
+                <a href="empleado.php" class="btn btn-secondary btn-rounded">Atrás</a>
                 <button type="submit" value="ok" name="btnregistrar" class="btn btn-primary btn-rounded">Registrar</button>
             </div>
         </form>

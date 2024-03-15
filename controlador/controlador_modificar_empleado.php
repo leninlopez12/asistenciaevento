@@ -16,7 +16,7 @@ if (!empty($_POST["btnmodificar"])) {
                     new PNotify({
                         title: "CORRECTO",
                         type: "success",
-                        text: "El empleado se ha modificado correctamente",
+                        text: "El asistente se ha modificado correctamente",
                         styling: "bootstrap3"
                     })
                 })
@@ -27,7 +27,7 @@ if (!empty($_POST["btnmodificar"])) {
                     new PNotify({
                         title: "INCORRECTO",
                         type: "error",
-                        text: "Error al modificar empleado",
+                        text: "Error al modificar asistente",
                         styling: "bootstrap3"
                     })
                 })

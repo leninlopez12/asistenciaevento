@@ -58,7 +58,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
           <!--<th scope="col">ID_Evento</th>-->
           <th scope="col">ASISTENTES</th>
           <th scope="col">CÓDIGO/NÚMERO DE IDENTIDAD</th>
-          <th scope="col">CARGO</th>
+          <th scope="col">GRADO</th>
           <th scope="col">ENTRADA</th>
           <th scope="col">SALIDA</th>
           <th scope="col">HORAS</th>

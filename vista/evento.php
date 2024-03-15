@@ -48,7 +48,8 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                     <td><?= $datos->tipo_evento ?></td>
                     <td>
                         <a href="" data-toggle="modal" data-target="#exampleModal<?= $datos->id_evento ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="controlador_eliminar_evento.php?id=<?= $datos->id_evento ?>" onclick="advertencia(event)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                        <a href="evento.php?id=<?= $datos->id_evento ?>" onclick="advertencia(event)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+
                     </td>
                 </tr>
 
@@ -77,7 +78,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                                         <input type="text" placeholder="Tipo de Evento" class="input input__text" name="txttipo_evento" value="<?= $datos->tipo_evento ?>">
                                     </div>
                                     <div class="text-right p-2">
-                                        <a href="evento.php" class="btn btn-secondary btn-rounded">Atras</a>
+                                        <a href="evento.php" class="btn btn-secondary btn-rounded">Atrás</a>
                                         <button type="submit" value="ok" name="btnmodificar" class="btn btn-primary btn-rounded">Modificar</button>
                                     </div>
                                 </form>

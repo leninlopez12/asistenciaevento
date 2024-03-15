@@ -79,7 +79,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                     <th scope="col">NOMBRE</th>
                     <th scope="col">APELLIDO</th>
                     <th scope="col">CÓDIGO/NÚMERO DE IDENTIDAD</th>
-                    <th scope="col">CARGO</th>
+                    <th scope="col">GRADO</th>
                     <th scope="col">CORREO ELECTRÓNICO</th>
                     <th scope="col">CELULAR</th>
                     <th></th>
@@ -155,7 +155,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
                                             </select>
                                         </div>
                                         <div class="text-right p-2">
-                                            <a href="empleado.php" class="btn btn-secondary btn-rounded">Atras</a>
+                                            <a href="empleado.php" class="btn btn-secondary btn-rounded">Atrás</a>
                                             <button type="submit" value="ok" name="btnmodificar" class="btn btn-primary btn-rounded">Modificar</button>
                                         </div>
                                     </form>
