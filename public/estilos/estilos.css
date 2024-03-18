@@ -33,17 +33,15 @@ body {
   font-size: 30px; 
   margin-bottom: 20px;
 }
-
 .acceso {
   display: inline-block;
-  padding: 0.8rem 1.2rem;
-  
-  background-color: #5586D6;
-  color: #fff;
+  padding: 0.2rem 0.5rem;
   
   text-decoration: none;
-  border-radius: 4px;
-  
+  border-radius: 2px;
+
+  display: flex; 
+  justify-content: flex-end; /* Alinea los elementos hacia el final del contenedor (derecha) */
   font-weight: bold; 
   transition: background .3s ease;
 }

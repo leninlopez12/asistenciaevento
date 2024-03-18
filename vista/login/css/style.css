@@ -16,16 +16,20 @@ body{
 	height: 100%;
 	z-index: -1;
 }
-
-.container{
+.container {
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.container-shadow {
+    display: flex; /* Alinear elementos en fila */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(19, 110, 106, 0.349);
+    padding: 20px;
+}
 .img{
 	display: flex;
 	justify-content: flex-end;
@@ -40,7 +44,7 @@ body{
 }
 
 .img img{
-	width: 500px;
+	width: 350px;
 }
 
 form{
@@ -276,3 +280,5 @@ a:hover{
 	color: #26a65b;
 	letter-spacing: -0.02em;
   }
+  
+

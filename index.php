@@ -36,6 +36,8 @@
         }
     </style>
 </head>
+
+
 <body>
     <?php
     error_reporting(0);
@@ -58,7 +60,9 @@
     </div>
 
     <div class="container-right">
+    
             <div class="institute-name">
+                
                 <span class="line-1" id="line-1">Instituto Universitario de Innovación</a></span>
                 <span class="line-2" id="line-2">Ciencia y Tecnología Inudi Perú</a></span>
             </div>
@@ -94,7 +98,7 @@
         include "controlador/controlador_registrar_asistencia.php";
         ?>
         <div class="container">
-            <!--botonex GUIÑO GUIÑO-->
+            
             <p class="dni">Ingrese su CÓDIGO/NÚMERO DE IDENTIDAD</p>
             <form action="" method="POST">
                 <input type="number" placeholder="Código/Número ID del asistente" name="txtdni" id="txtdni">
@@ -133,12 +137,10 @@
             })
         </script>
     </div>
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Instituto Universitario de Innovación Ciencia y Tecnología Inudi Perú</p>
-    </footer>
     
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> <a href="./vista/login/login.php" style="display: inline; text-decoration: inherit; color: inherit;">Instituto Universitario de Innovación Ciencia y Tecnología Inudi Perú</a></p>
+    </footer>
 </body>
 
-
 </html>
-<!--<a class="acceso" href="./vista/login/login.php">Login</a>-->
