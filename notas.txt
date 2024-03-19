@@ -1,0 +1,19 @@
+EMPLEADO:
+esto debe ir tambien en coordinación con asistencias y eventos ya que debe estar vinculado con la id_evento, debe almacenarse en la id_evento cuando cambie de evento esto también debe cambiarse que usuarios estan vinculados con la id_evento , al igual que las asistencias.
+
+EVENTO:
+Asegúrate de que cada evento nuevo tenga una identificación única que es id_evento como esta en la base de datos de la tabla evento.
+Asocia correctamente el evento con cualquier dato relacionado, como empleados y asistencia.
+Puedes lograr esto almacenando la identificación del evento en las tablas de empleados y asistencia como una clave externa que establezca la relación entre ellos y el nuevo evento pero todo esto sera id_evento.
+-Cada evento que ya ha sido creado tenga la opción de seleccionar y estar en ese evento y toda la información de los asistentes y usuarios también se actualicen en la pagina de empleados y asistentes con la id_evento que se relaciona.
+-esto tambien debe ir con la mano de la  pagina index.php que esta la interfaz para registrar asistencia, todos los eventos creados deben de aparecer en la interfaz para seleccionar y enviar el registro con ese id_evento.
+
+ASISTENCIA:
+- que la interfaz permita a los usuarios registrar la asistencia durante un evento específico.
+-esto tambien debe ir con la mano de la  pagina index.php que esta la interfaz para registrar asistencia, todos los eventos creados deben de aparecer en la interfaz para seleecionar y enviar el registro con ese id_evento.
+Debe incluir elementos que permitan al usuario seleccionar el evento al que está asistiendo como en el archivo index.php que debe de dar una opcion al usuario que evento esta asistiendo y selecciona y con esa id_evento se pueda enviar la asistencia .
+Proporciona opciones para registrar la entrada y la salida de los asistentes esto debe ir de la mano con el evento que se va vincular como id_evento que tiene que estar relacionado.
+Controlador de Registro de Asistencia 
+Después de validar los datos del formulario de registro de asistencia, necesitas procesar estos datos.
+-asocia correctamente la asistencia registrada con el evento correspondiente en la base de datos.
+Esto implica que necesitas almacenar la identificación del evento junto con los datos de asistencia en la tabla de asistencia.

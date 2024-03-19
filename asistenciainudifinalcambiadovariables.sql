@@ -23,13 +23,13 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `asistencia`;
 CREATE TABLE `asistencia`  (
   `id_asistencia` int NOT NULL AUTO_INCREMENT,
-  `id_empleado` int NOT NULL,
+  `id_asistente` int NOT NULL,
   `entrada` datetime NULL DEFAULT NULL,
   `salida` datetime NULL DEFAULT NULL,
   `id_evento` int NULL DEFAULT NULL,
   PRIMARY KEY (`id_asistencia`) USING BTREE,
-  INDEX `fk2`(`id_empleado` ASC) USING BTREE,
-  CONSTRAINT `fk2` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`) ON DELETE CASCADE ON UPDATE RESTRICT
+  INDEX `fk2`(`id_asistente` ASC) USING BTREE,
+  CONSTRAINT `fk2` FOREIGN KEY (`id_asistente`) REFERENCES `asistente` (`id_asistente`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -40,46 +40,46 @@ INSERT INTO `asistencia` VALUES (2, 2, '2024-03-07 12:05:12', '2024-03-07 12:05:
 INSERT INTO `asistencia` VALUES (3, 3, '2024-03-07 03:50:31', '2024-03-07 03:50:34', NULL);
 
 -- ----------------------------
--- Table structure for cargo
+-- Table structure for grado
 -- ----------------------------
-DROP TABLE IF EXISTS `cargo`;
-CREATE TABLE `cargo`  (
-  `id_cargo` int NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `grado`;
+CREATE TABLE `grado`  (
+  `id_grado` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id_cargo`) USING BTREE
+  PRIMARY KEY (`id_grado`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of cargo
+-- Records of grado
 -- ----------------------------
-INSERT INTO `cargo` VALUES (1, 'doctor');
-INSERT INTO `cargo` VALUES (2, 'titulado');
+INSERT INTO `grado` VALUES (1, 'doctor');
+INSERT INTO `grado` VALUES (2, 'titulado');
 
 -- ----------------------------
--- Table structure for empleado
+-- Table structure for asistente
 -- ----------------------------
-DROP TABLE IF EXISTS `empleado`;
-CREATE TABLE `empleado`  (
-  `id_empleado` int NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `asistente`;
+CREATE TABLE `asistente`  (
+  `id_asistente` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `apellido` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `dni` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `cargo` int NOT NULL,
+  `grado` int NOT NULL,
   `id_evento` int NULL DEFAULT NULL,
   `correo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `celular` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id_empleado`) USING BTREE,
-  INDEX `fk1`(`cargo` ASC) USING BTREE,
-  CONSTRAINT `fk1` FOREIGN KEY (`cargo`) REFERENCES `cargo` (`id_cargo`) ON DELETE CASCADE ON UPDATE RESTRICT
+  PRIMARY KEY (`id_asistente`) USING BTREE,
+  INDEX `fk1`(`grado` ASC) USING BTREE,
+  CONSTRAINT `fk1` FOREIGN KEY (`grado`) REFERENCES `grado` (`id_grado`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of empleado
+-- Records of asistente
 -- ----------------------------
-INSERT INTO `empleado` VALUES (1, 'lenin', 'López Yucra', '75896898', 1, 1, 'lenin@gmail.com', '952808082');
-INSERT INTO `empleado` VALUES (2, 'lenino', 'Lopez', '7589555', 2, 1, 'elia@gmail.com', '88884585');
-INSERT INTO `empleado` VALUES (3, 'edison', 'ramos', '75227341', 1, 1, 'ediii@gmail.com', '987456321');
-INSERT INTO `empleado` VALUES (4, 'Antonio', 'Ra', '7896541', 2, 2, NULL, NULL);
+INSERT INTO `asistente` VALUES (1, 'lenin', 'López Yucra', '75896898', 1, 1, 'lenin@gmail.com', '952808082');
+INSERT INTO `asistente` VALUES (2, 'lenino', 'Lopez', '7589555', 2, 1, 'elia@gmail.com', '88884585');
+INSERT INTO `asistente` VALUES (3, 'edison', 'ramos', '75227341', 1, 1, 'ediii@gmail.com', '987456321');
+INSERT INTO `asistente` VALUES (4, 'Antonio', 'Ra', '7896541', 2, 2, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for empresa
