@@ -123,12 +123,12 @@ input {
 
 .line-1 {
   color: #020303;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.05em;
 }
 
 .line-2 {
   color: #26a65b;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
 }
 
 /* Estilos para pantallas más pequeñas */
@@ -169,4 +169,8 @@ footer p {
 }
 .H1:hover {
   color: #26a65b;
+}
+.imgpublic{
+  font-size: 10px;
+  color: #fff;
 }

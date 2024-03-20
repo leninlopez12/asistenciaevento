@@ -60,11 +60,8 @@
     </div>
 
     <div class="container-right">
-    
             <div class="institute-name">
-                
-                <span class="line-1" id="line-1">Instituto Universitario de Innovación</a></span>
-                <span class="line-2" id="line-2">Ciencia y Tecnología Inudi Perú</a></span>
+                <span class="line-1" id="line-1">Auto</a></span><span class="line-2" id="line-2">list</a></span>
             </div>
             <script>
     // Obtener los elementos span por su ID
@@ -136,10 +133,16 @@
                 }
             })
         </script>
+        
+        
+    </div>
+    <div class="imgpublic">
+        <p>image: public domain</p>
     </div>
     
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> <a href="./vista/login/login.php" style="display: inline; text-decoration: inherit; color: inherit;">Instituto Universitario de Innovación Ciencia y Tecnología Inudi Perú</a></p>
+     <p class="version">Autolist: sistema de control de asistencia online | versión 1.0</p>
+        <p>&copy; <?php echo date("Y"); ?> <a href="./vista/login/login.php" style="display: inline; text-decoration: inherit; color: inherit;">Instituto Universitario de Innovación Ciencia y Tecnología Inudi Perú S.A.C.</a></p>
     </footer>
 </body>
 
